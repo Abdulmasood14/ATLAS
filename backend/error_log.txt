@@ -1,0 +1,17 @@
+Error in get_companies: 1 validation error for CompanyInfo
+company_name
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+Traceback (most recent call last):
+  File "D:\Objective and Subjective\Objective and Subjective\New folder\FINAL\chatbot_ui\backend\api\upload.py", line 279, in get_companies
+    companies = [
+                ^
+  File "D:\Objective and Subjective\Objective and Subjective\New folder\FINAL\chatbot_ui\backend\api\upload.py", line 280, in <listcomp>
+    CompanyInfo(
+  File "C:\Users\prasannasekaran\AppData\Local\Programs\Python\Python311\Lib\site-packages\pydantic\main.py", line 250, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for CompanyInfo
+company_name
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type

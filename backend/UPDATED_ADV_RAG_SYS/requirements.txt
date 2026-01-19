@@ -1,0 +1,40 @@
+# Python Requirements for Updated Advanced RAG System
+# Installation: pip install -r requirements.txt
+
+# Core PDF Processing
+pdfplumber>=0.10.0
+PyMuPDF>=1.23.0
+
+# Database
+psycopg2-binary>=2.9.0
+
+# Machine Learning & Embeddings
+sentence-transformers>=2.2.0
+torch>=2.0.0
+transformers>=4.30.0
+
+# Image Processing
+opencv-python>=4.8.0
+Pillow>=10.0.0
+
+# Document Processing
+docling>=0.1.0
+
+# Data Processing
+numpy>=1.24.0
+pandas>=2.0.0
+
+# Excel Export
+openpyxl>=3.1.0
+
+# HTTP Requests
+requests>=2.31.0
+
+# Additional utilities
+python-dateutil>=2.8.0
+tqdm>=4.65.0
+
+# Note: The following external services must be installed separately:
+# - PostgreSQL 14+ with pgvector extension
+# - Ollama with phi4:14b model
+# - Ollama with qwen2.5vl:latest model

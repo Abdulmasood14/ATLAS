@@ -1,0 +1,217 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* High Contrast Sleek Theme */
+  --primary-rgb: 0, 255, 255;
+  /* Cyan */
+  --background-rgb: 5, 5, 10;
+  /* Very Dark Black/Blue */
+  --background-secondary-rgb: 15, 23, 42;
+  /* Slate 900 */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-text-primary font-sans antialiased;
+    background-color: #020617;
+    /* Very dark background */
+    color: #F8FAFC;
+    /* High contrast text */
+  }
+
+
+  html,
+  body,
+  #__next {
+    @apply h-full w-full;
+  }
+}
+
+@layer components {
+
+  /* Glass effect for cards */
+  .glass-effect {
+    @apply bg-background-card/80 backdrop-blur-md border border-primary/20 shadow-glass;
+  }
+
+  /* Button styles */
+  .btn-primary {
+    @apply px-4 py-2 bg-primary hover:bg-primary-hover text-white rounded-lg transition-colors duration-200 font-medium;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 bg-background-secondary hover:bg-background-card text-text-secondary border border-primary/30 rounded-lg transition-colors duration-200;
+  }
+
+  /* Scrollbar styling */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(var(--background-secondary-rgb), 0.5);
+    border-radius: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgba(var(--primary-rgb), 0.3);
+    border-radius: 4px;
+    border: 1px solid rgba(var(--background-rgb), 0.5);
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(var(--primary-rgb), 0.6);
+  }
+
+  /* Firefox */
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(var(--primary-rgb), 0.3) transparent;
+  }
+
+  /* Message bubble animations */
+  .message-enter {
+    animation: messageSlideIn 0.3s ease-out;
+  }
+
+  @keyframes messageSlideIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Typing indicator animation */
+  .typing-dot {
+    animation: typingDot 1.4s infinite;
+  }
+
+  .typing-dot:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .typing-dot:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+
+  @keyframes typingDot {
+
+    0%,
+    60%,
+    100% {
+      transform: translateY(0);
+      opacity: 0.7;
+    }
+
+    30% {
+      transform: translateY(-10px);
+      opacity: 1;
+    }
+  }
+
+  /* Pulse animation for loading */
+  .pulse-slow {
+    animation: pulseSlow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulseSlow {
+
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  /* Toast notification */
+  .toast {
+    @apply fixed bottom-4 right-4 px-6 py-3 bg-background-card border border-primary/50 rounded-lg shadow-glass-hover text-text-primary;
+    animation: toastSlideIn 0.3s ease-out;
+  }
+
+  @keyframes toastSlideIn {
+    from {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Markdown Content Styling */
+  .markdown-content h1,
+  .markdown-content h2,
+  .markdown-content h3 {
+    @apply font-bold text-white mt-4 mb-2;
+  }
+
+  .markdown-content h3 {
+    @apply text-lg text-primary;
+  }
+
+  .markdown-content p {
+    @apply mb-2 leading-relaxed text-gray-200;
+  }
+
+  .markdown-content ul {
+    @apply list-disc list-inside mb-4 pl-2;
+  }
+
+  .markdown-content ol {
+    @apply list-decimal list-inside mb-4 pl-2;
+  }
+
+  .markdown-content strong {
+    @apply font-bold text-primary;
+  }
+
+  .markdown-content code {
+    @apply bg-background-secondary/80 px-1 py-0.5 rounded text-primary font-mono text-sm;
+  }
+
+  .markdown-content pre {
+    @apply bg-background-secondary p-4 rounded-lg overflow-x-auto my-2 border border-primary/20;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom focus styles */
+:focus-visible {
+  @apply outline-none ring-2 ring-primary/50 ring-offset-2 ring-offset-background;
+}
+
+/* Selection color */
+::selection {
+  @apply bg-primary/30 text-text-primary;
+}
+
+/* Disable user select for UI elements */
+button,
+.no-select {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}

@@ -1,0 +1,27 @@
+# ============================================================================
+# FINANCIAL RAG CHATBOT - BACKEND REQUIREMENTS
+# ============================================================================
+
+# FastAPI and server
+fastapi
+uvicorn[standard]
+python-multipart  # For file uploads
+websockets  # For WebSocket support
+
+# Pydantic (data validation)
+pydantic
+pydantic-settings
+
+# Database
+psycopg2-binary  # PostgreSQL adapter
+asyncpg  # Async PostgreSQL (optional, for future)
+
+# Export formats
+openpyxl  # Excel export
+
+# Utilities
+python-dotenv  # Environment variables
+
+# NOTE: The RAG system dependencies are in ../UPDATED_ADV_RAG_SYS/requirements.txt
+# You may need to install those as well for the RAG service to work.
+yfinance>=0.2.40

@@ -1,0 +1,16 @@
+
+--- Export Error 2025-12-18 15:18:24.685286 ---
+name '_export_to_excel' is not defined
+Traceback (most recent call last):
+  File "D:\Objective and Subjective\Objective and Subjective\New folder\FINAL\chatbot_ui\backend\api\export.py", line 100, in export_session
+    file_size = _export_to_excel(file_path, session_row, messages, feedback_map, request)
+                ^^^^^^^^^^^^^^^^
+NameError: name '_export_to_excel' is not defined
+
+--- Export Error 2025-12-18 15:18:27.919652 ---
+name '_export_to_excel' is not defined
+Traceback (most recent call last):
+  File "D:\Objective and Subjective\Objective and Subjective\New folder\FINAL\chatbot_ui\backend\api\export.py", line 100, in export_session
+    file_size = _export_to_excel(file_path, session_row, messages, feedback_map, request)
+                ^^^^^^^^^^^^^^^^
+NameError: name '_export_to_excel' is not defined
