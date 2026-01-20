@@ -12,8 +12,9 @@ import asyncio
 from concurrent.futures import ThreadPoolExecutor
 
 # Add UPDATED_ADV_RAG_SYS to Python path
-CURRENT_DIR = Path(__file__).parent
-RAG_SYSTEM_PATH = CURRENT_DIR.parent.parent.parent / "UPDATED_ADV_RAG_SYS"
+CURRENT_DIR = Path(__file__).parent  # services/
+BACKEND_DIR = CURRENT_DIR.parent  # backend/
+RAG_SYSTEM_PATH = BACKEND_DIR / "UPDATED_ADV_RAG_SYS"  # backend/UPDATED_ADV_RAG_SYS/
 sys.path.insert(0, str(RAG_SYSTEM_PATH))
 
 # Import from existing RAG system
