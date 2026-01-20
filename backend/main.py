@@ -80,6 +80,8 @@ app.add_middleware(
         "http://localhost:3001",
         "http://127.0.0.1:3000",
         "http://127.0.0.1:3001",
+        "https://atlas-frontend.onrender.com",  # Render frontend
+        "https://*.onrender.com",  # Allow any Render subdomain
     ],
     allow_credentials=True,
     allow_methods=["*"],
